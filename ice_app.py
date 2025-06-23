@@ -100,21 +100,26 @@ class App(customtkinter.CTk):
         self.label_device_name.grid(row=1, column=0, padx=5, pady=5, sticky="w")
         self.entry_device_name = customtkinter.CTkEntry(self.settings_left_frame)
         self.entry_device_name.grid(row=1, column=1, padx=5, pady=5, sticky="ew")
+        self.entry_device_name.insert(0, "Varsayılan Cihaz Adı")
 
         self.label_device_id = customtkinter.CTkLabel(self.settings_left_frame, text="Cihaz ID:")
         self.label_device_id.grid(row=2, column=0, padx=5, pady=5, sticky="w")
         self.entry_device_id = customtkinter.CTkEntry(self.settings_left_frame)
         self.entry_device_id.grid(row=2, column=1, padx=5, pady=5, sticky="ew")
+        self.entry_device_id.insert(0, "ID")
 
         self.label_license = customtkinter.CTkLabel(self.settings_left_frame, text="Lisans:")
         self.label_license.grid(row=3, column=0, padx=5, pady=5, sticky="w")
         self.entry_license = customtkinter.CTkEntry(self.settings_left_frame)
         self.entry_license.grid(row=3, column=1, padx=5, pady=5, sticky="ew")
+        self.entry_license.insert(0, "Lisans")
 
         self.label_mqtt_server = customtkinter.CTkLabel(self.settings_left_frame, text="MQTT Server:")
         self.label_mqtt_server.grid(row=4, column=0, padx=5, pady=5, sticky="w")
         self.entry_mqtt_server = customtkinter.CTkEntry(self.settings_left_frame)
         self.entry_mqtt_server.grid(row=4, column=1, padx=5, pady=5, sticky="ew")
+        self.entry_mqtt_server.insert(0, "Lisans")
+
 
         self.label_mqtt_keepalive = customtkinter.CTkLabel(self.settings_left_frame, text="MQTT Keepalive:")
         self.label_mqtt_keepalive.grid(row=5, column=0, padx=5, pady=5, sticky="w")
@@ -126,8 +131,10 @@ class App(customtkinter.CTk):
         # Checkboxlar aynı kalacak, satır numaralarını güncelle
         self.checkbox_web = customtkinter.CTkCheckBox(self.settings_left_frame, text="Web Sayfası")
         self.checkbox_web.grid(row=6, column=0, padx=5, pady=5, sticky="w", columnspan=2)
+        self.checkbox_web.select()
         self.checkbox_tcp = customtkinter.CTkCheckBox(self.settings_left_frame, text="TCP Server")
         self.checkbox_tcp.grid(row=7, column=0, padx=5, pady=5, sticky="w", columnspan=2)
+        self.checkbox_tcp.select()
         self.checkbox_reset = customtkinter.CTkCheckBox(self.settings_left_frame, text="Reset Servisi")
         self.checkbox_reset.grid(row=8, column=0, padx=5, pady=5, sticky="w", columnspan=2)
         self.checkbox_random_mac = customtkinter.CTkCheckBox(self.settings_left_frame, text="Random MAC")
@@ -169,6 +176,7 @@ class App(customtkinter.CTk):
         # WAN Checkboxlar
         self.checkbox_ethernet = customtkinter.CTkCheckBox(self.settings_right_frame, text="Ethernet")
         self.checkbox_ethernet.grid(row=1, column=0, padx=5, pady=5, sticky="w")
+        self.checkbox_ethernet.select()
 
         self.checkbox_wireless_ap = customtkinter.CTkCheckBox(self.settings_right_frame, text="wirelessAP")
         self.checkbox_wireless_ap.grid(row=2, column=0, padx=5, pady=5, sticky="w")
@@ -185,6 +193,7 @@ class App(customtkinter.CTk):
         self.checkbox_static.grid(row=5, column=0, padx=5, pady=5, sticky="w", columnspan=2)
         self.checkbox_dynamic = customtkinter.CTkCheckBox(self.settings_right_frame, text="Dinamik")
         self.checkbox_dynamic.grid(row=6, column=0, padx=5, pady=5, sticky="w", columnspan=2)
+        self.checkbox_dynamic.select()
 
         # IP ile ilgili label ve textboxlar (yan yana)
         self.label_ip_addr = customtkinter.CTkLabel(self.settings_right_frame, text="IP:")
